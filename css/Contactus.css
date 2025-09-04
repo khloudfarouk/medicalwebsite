@@ -1,0 +1,386 @@
+
+:root {
+  --main-color: #1A1938;
+  --secondary-color: #22AAFF;
+}
+
+
+
+/* الفيديو خلفية */
+.hero-section {
+  position: relative;
+  
+  overflow: hidden;
+  color: var(--main-color);
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.425);
+  z-index: -1;
+}
+
+/* النافبار */
+.navbar {
+  padding: 15px 30px;
+}
+
+
+
+/* الكونتينر بتاع اللينكات */
+.nav-container {
+  background: rgba(255, 255, 255, 0.411);
+
+  border-radius: 50px;
+  padding: 8px 25px;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  color: var(--main-color) !important;
+  padding: 8px 15px;
+  border-radius: 30px;
+}
+
+/* الخط + النقطتين */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--main-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link span {
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--main-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active::before,
+.nav-link:hover::before,
+.nav-link.active span,
+.nav-link:hover span {
+  opacity: 1;
+}
+
+/* زرار التواصل */
+.contact-btn {
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: var(--main-color);
+  /* بنفسجي */
+  color: #fff;
+text-decoration: none;
+  transition: 0.3s;
+  margin-top: 15px;
+  /* في الموبايل */
+}
+
+.contact-btn:hover {
+  background: var(--main-color);
+  /* بنفسجي أغمق عند الهوفر */
+}
+
+.contact-btn i {
+  font-size: 14px;
+  transform: rotate(45deg);
+  /* يخليه لفوق + يمين */
+}
+
+
+/* النص */
+.hero-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 15px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* input و textarea عبارة عن سطر فقط */
+.line-input {
+  border: none !important;           
+  border-bottom: 2px solid #ccc !important; 
+  border-radius: 0 !important;       
+  background: transparent !important;
+  box-shadow: none !important;       
+}
+
+.line-input:focus {
+  border-bottom: 2px solid var(--main-color) !important; 
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
+/* زرار بنفسجي */
+.btn-purple {
+  background-color: var(--main-color) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 50px;  
+  padding: 10px 25px;   
+  transition: 0.3s ease-in-out;
+  border: none; 
+}
+
+.btn-purple:hover {
+  background-color: #5e2b97 !important; 
+  transform: translateY(-2px); 
+}
+
+
+
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;              /* خلفية بيضا */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* فيسبوك */
+.social-icon.facebook i {
+  color: #1877f2; /* أزرق فيسبوك */
+}
+
+/* تويتر */
+.social-icon.twitter i {
+  color: #1da1f2; /* أزرق تويتر */
+}
+
+/* لينكدإن */
+.social-icon.linkedin i {
+  color: #0a66c2; /* أزرق لينكدإن */
+}
+
+/* إنستجرام */
+.social-icon.instagram i {
+  color: #e4405f; /* وردي/أحمر */
+}
+
+/* يوتيوب */
+.social-icon.youtube i {
+  color: #ff0000; /* أحمر */
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.social-icon:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer-section {
+    background: var(--main-color);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.footer-tagline {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.footer-btn {
+    background: #fff;
+    color: var(--main-color);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 90px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.footer-btn i {
+    font-size: 18px;
+    transform: rotate(45deg);
+}
+
+.footer-btn:hover {
+    background: #f2f2f2;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* المسافة بين الليستات */
+}
+
+.footer-middle-list {
+    padding: 0 1rem;
+    /* نلغي أي خطوط */
+    border-left: none;
+}
+
+
+.footer-middle-list:first-child {
+    border-left: none;
+}
+
+.footer-list-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-list {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.footer-list a:hover {
+    color: #000;
+}
+
+/* أيقونات السوشيال */
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    /* خلفية بيضاوية */
+    color: #000;
+    /* افتراضي */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* ألوان أيقونات حسب كل شبكة */
+.footer-social a.linkedin i {
+    color: #0077B5;
+}
+
+.footer-social a.x i {
+    color: #1DA1F2;
+}
+
+/* تويتر */
+.footer-social a.facebook i {
+    color: #1877F2;
+}
+
+.footer-social a.instagram i {
+    color: #E1306C;
+}
+
+.footer-social a.google i {
+    color: #DB4437;
+}
+
+.footer-social a:hover {
+    transform: translateY(-3px);
+}

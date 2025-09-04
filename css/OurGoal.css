@@ -1,0 +1,418 @@
+:root {
+    --main-color: #1A1938;
+    --secondary-color: #22AAFF;
+}
+
+
+
+/* الفيديو خلفية */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--main-color);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.603);
+    z-index: -1;
+}
+
+/* النافبار */
+.navbar {
+    padding: 15px 30px;
+}
+
+
+
+/* الكونتينر بتاع اللينكات */
+.nav-container {
+    background: rgba(255, 255, 255, 0.411);
+
+    border-radius: 50px;
+    padding: 8px 25px;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    color: var(--main-color) !important;
+    padding: 8px 15px;
+    border-radius: 30px;
+}
+
+/* الخط + النقطتين */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--main-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link span {
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--main-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::before,
+.nav-link:hover::before,
+.nav-link.active span,
+.nav-link:hover span {
+    opacity: 1;
+}
+
+/* زرار التواصل */
+.contact-btn {
+    border-radius: 50px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: var(--main-color);
+    /* بنفسجي */
+    color: #fff;
+text-decoration: none;
+    transition: 0.3s;
+    margin-top: 15px;
+    /* في الموبايل */
+}
+
+.contact-btn:hover {
+    background: var(--main-color);
+    /* بنفسجي أغمق عند الهوفر */
+}
+
+.contact-btn i {
+    font-size: 14px;
+    transform: rotate(45deg);
+    /* يخليه لفوق + يمين */
+}
+
+
+/* النص */
+.hero-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 15px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+/* our vision */
+/* تنسيقات Our Vision */
+
+
+
+
+/* our vision */
+/* تنسيقات Our Vision */
+.our-vision {
+   font-family: 'poppins', sans-serif;
+   color: var(--main-color);
+}
+
+.vision-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.word-with-image {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-icon {
+  position: absolute;
+  top: -30px;      /* يتحكم في نزول الصورة تحت الكلمة */
+  left: 50%;      /* يخلي الصورة في نص كلمة Our */
+  transform: translateX(-70%); /* يظبط المحاذاة */
+  width: 100px;
+  height: auto;
+}
+
+
+.vision-text {
+  
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  line-height: 1.7;
+}
+
+.vision-full-img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.vision-slide {
+  display: none;
+}
+.vision-slide.active {
+  display: block;
+}
+
+/* ستايل الأزرار */
+.vision-btn {
+  background: none;
+  border: none;
+  color: var(--main-color); /* خليها نفس اللون الأساسي */
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.vision-btn:hover {
+  color: #000; /* أو أي درجة أغمق */
+  transform: translateY(2px);
+}
+
+.vision-btn i {
+  font-size: 1.3rem;
+}
+
+
+/* end our vison */
+
+
+
+
+
+.othercases .cards-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.othercases .case-card {
+    flex: 0 0 25%;
+    /* هنا السر */
+    min-width: 25%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: start;
+    border: 1px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    background-image: linear-gradient(white, white),
+        linear-gradient(180deg, #003366, #3399ff);
+}
+
+.othercases .case-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.othercases .case-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.othercases .case-card a {
+    font-size: 13px;
+    color: #999;
+    text-decoration: none;
+}
+
+
+
+
+.footer-section {
+    background: var(--main-color);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.footer-tagline {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.footer-btn {
+    background: #fff;
+    color: var(--main-color);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 90px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.footer-btn i {
+    font-size: 18px;
+    transform: rotate(45deg);
+}
+
+.footer-btn:hover {
+    background: #f2f2f2;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* المسافة بين الليستات */
+}
+
+.footer-middle-list {
+    padding: 0 1rem;
+    /* نلغي أي خطوط */
+    border-left: none;
+}
+
+
+.footer-middle-list:first-child {
+    border-left: none;
+}
+
+.footer-list-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-list {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.footer-list a:hover {
+    color: #000;
+}
+
+/* أيقونات السوشيال */
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    /* خلفية بيضاوية */
+    color: #000;
+    /* افتراضي */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* ألوان أيقونات حسب كل شبكة */
+.footer-social a.linkedin i {
+    color: #0077B5;
+}
+
+.footer-social a.x i {
+    color: #1DA1F2;
+}
+
+/* تويتر */
+.footer-social a.facebook i {
+    color: #1877F2;
+}
+
+.footer-social a.instagram i {
+    color: #E1306C;
+}
+
+.footer-social a.google i {
+    color: #DB4437;
+}
+
+.footer-social a:hover {
+    transform: translateY(-3px);
+}
