@@ -1,6 +1,7 @@
 :root {
   --main-color: #1A1938;
   --secondary-color: #22AAFF;
+  overflow-x: hidden!important;
 }
 
 
@@ -108,32 +109,23 @@
 /* زرار التواصل */
 .contact-btn {
   border-radius: 50px;
-  padding: 8px 20px;
+  padding: 10px 25px; /* ✨ padding مظبوط */
   display: flex;
+  justify-content: center; /* ✨ يخلي النص والأيقونة في النص */
   align-items: center;
   gap: 8px;
   border: none;
   background: var(--main-color);
-  /* بنفسجي */
   color: #fff;
-
   transition: 0.3s;
   margin-top: 15px;
   text-decoration: none;
-  /* في الموبايل */
-}
-
-.contact-btn:hover {
-  background: var(--main-color);
-  /* بنفسجي أغمق عند الهوفر */
 }
 
 .contact-btn i {
   font-size: 14px;
   transform: rotate(45deg);
-  /* يخليه لفوق + يمين */
 }
-
 
 /* النص */
 .hero-content {
@@ -155,7 +147,19 @@
   .hero-content h1 {
     font-size: 1.8rem;
   }
+
+  /* ✨ تصغير المساحة بين عناصر القائمة */
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* ✨ نصغر الكونتينر كمان */
+  .nav-container {
+    padding: 6px 15px;
+  }
 }
+
 
 
 
@@ -186,60 +190,69 @@
   position: absolute;
   left: -40px;
   bottom: -20px;
-  /* مكان الصورة تحت الكلمة */
   width: 90px;
-  /* صغري/كبري حسب التصميم */
   height: auto;
 }
 
 .driven-text {
-
   color: var(--main-color);
 }
 
 .second-image {
   width: 550px !important;
   height: 450px;
-
 }
 
+/* ✨ للموبايل */
+@media (max-width: 992px) {
+  .driven-section .row {
+    text-align: center;
+  }
 
-/* end Driven by Discovery, Guided by Precision. */
+  .driven-section .col-lg-8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .driven-section .col-lg-4 {
+    justify-content: center !important;
+    margin-top: 1.5rem;
+  }
+  .driven-title {
+    margin-top: 40px;
+  }
+
+  .driven-section img.img-fluid {
+    max-width: 70%;
+    height: auto;
+  }
+}
+/* end Driven Section */
 
 
-
-
-/* our publications  */
+/* our publications */
 .gradient-border {
-    background: linear-gradient(180deg, #003366, #3399ff);
-    /* ألوان التدرج */
-    padding: 2px;
-    /* هنا السمك - قللته */
-    border-radius: 1rem;
-    /* نفس الراوندد بتاع الكارد */
+  background: linear-gradient(180deg, #003366, #3399ff);
+  padding: 2px;
+  border-radius: 1rem;
 }
 
 .gradient-border .card {
-    background: #fff;
-    /* الخلفية */
-    border-radius: inherit;
+  background: #fff;
+  border-radius: inherit;
 }
 
-
-.publication-data
-{
-    color: var(--main-color);
+.publication-data {
+  color: var(--main-color);
 }
-
-
-
-
-
 
 /* ====== الأعمدة الأساسية ====== */
 .exp-row {
   display: flex;
   gap: 1rem;
+  align-items: stretch;
+  transition: all 0.6s ease;
 }
 
 .exp-col {
@@ -249,11 +262,11 @@
   padding: 2rem;
   transition: all 0.6s ease;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+  min-height: 300px;
 }
 
 /* حدود متدرجة */
@@ -276,7 +289,7 @@
 }
 
 .exp-col h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--main-color);
 }
@@ -287,16 +300,13 @@
   color: var(--main-color);
 }
 
-.read-more  {
-  color:#22AAFF;
-  font-weight: bold;
-  font-size: 30px;
-}
 .read-more {
-    position: relative;
-    z-index: 10;
+  color: #22AAFF;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  z-index: 10;
 }
-
 
 .exp-col img {
   max-width: 250px;
@@ -304,7 +314,7 @@
   transition: all 0.7s ease;
 }
 
-/* ====== الوضع الطبيعي ====== */
+/* الوضع الطبيعي */
 .exp-left {
   flex: 0 0 66.6667%;
   max-width: 66.6667%;
@@ -315,46 +325,129 @@
   max-width: 33.3333%;
 }
 
-/* الكارد الصغير مخفي الصورة افتراضياً */
-.exp-right.collapsed img {
+/* الصورة في العمود اليمين مخفية افتراضياً */
+.exp-right img {
   opacity: 0;
   visibility: hidden;
   max-width: 0;
+  transition: all 0.6s ease;
 }
 
-/* ====== عند الهوفر ====== */
-.exp-row:hover .exp-left {
-  flex: 0 0 33.3333%;
-  max-width: 33.3333%;
-}
-
-.exp-row:hover .exp-right {
+/* ====== عند الهوفر على العمود اليمين ====== */
+.exp-right:hover {
   flex: 0 0 66.6667%;
   max-width: 66.6667%;
 }
 
-/* الصورة والتوسع */
-.exp-row:hover .exp-left img {
-  opacity: 0;
-  visibility: hidden;
-  max-width: 0;
-}
-
-.exp-row:hover .exp-right img {
+.exp-right:hover img {
   opacity: 1;
   visibility: visible;
   max-width: 250px;
 }
 
-.exp-row:hover .exp-right .full-text {
+.exp-right:hover .full-text {
   display: block;
 }
 
-.exp-row:hover .exp-right .short-text {
-  
+/* العمود الشمال يصغر وقت ما العمود اليمين يتوسع */
+.exp-right:hover ~ .exp-left,
+.exp-left:has(+ .exp-right:hover) {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
 }
 
+.exp-right:hover ~ .exp-left img,
+.exp-left:has(+ .exp-right:hover) img {
+  opacity: 0;
+  visibility: hidden;
+  max-width: 0;
+}
+
+/* ✨ النص يظهر 5 سطور فقط */
+.clamp-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.4s ease;
+}
+
+.fixed-card {
+  height: 350px;
+}
+
+/* ريسبونسف Driven Section (Features) */
+@media (max-width: 576px) {
+  .driven-section .col-lg-6 {
+    margin-top: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .driven-title {
+    text-align: center;
+    font-size: 1.4rem !important;
+    line-height: 1.3;
+    
+    padding-left: 20px;
+  }
+  }
+
+  .driven-text {
+    margin-top: 50px;
+    font-size: 1rem;
+  }
+
+  .second-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .second-image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+
+/* 📱 موبايل وتابلت: الكروت تبقى تحت بعض */
+@media (max-width: 991px) {
+  .exp-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .exp-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+   #our-publications .col-md-8,
+  #our-publications .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    text-align: center; /* النص في النص */
+  }
+
+
+  .exp-right img,
+  .exp-left img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-width:300px !important;
+  }
+
+  .exp-col img {
+    margin: 1rem auto 0;
+  }
+}
 /* end of our publications */
+
 
 
 
@@ -403,6 +496,10 @@
   font-size: 18px;
   transform: rotate(45deg);
 }
+.footer-btn a {
+  text-decoration: none;
+  color: var(--main-color);
+}
 
 .footer-btn:hover {
   background: #f2f2f2;
@@ -448,9 +545,7 @@
   transition: color 0.3s;
 }
 
-.footer-list a:hover {
-  color: #000;
-}
+
 
 /* أيقونات السوشيال */
 .footer-social a {
@@ -464,6 +559,7 @@
     color: #000; /* افتراضي */
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 /* ألوان أيقونات حسب كل شبكة */
@@ -475,4 +571,61 @@
 
 .footer-social a:hover {
     transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .footer-section .row.align-items-start {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    border: none !important; /* شيل البوردارات */
+    margin-bottom: 20px;
+  }
+
+  /* ترتيب القوائم الوسطى */
+  .footer-col:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* القائمتين الأوليين في صف واحد */
+  .footer-middle-list:nth-child(1),
+  .footer-middle-list:nth-child(2) {
+    width: 48%;
+    margin: 0 1%;
+    text-align: left; /* خلي النص منسق داخل القوائم */
+  }
+
+  /* القائمة الثالثة تأخذ صف كامل */
+  .footer-middle-list:nth-child(3) {
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  /* القوائم داخل Our Applications تبقى بدون تغيير */
+  .footer-middle-list:nth-child(3) .row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-middle-list:nth-child(3) .col-4,
+  .footer-middle-list:nth-child(3) .col-8 {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+
+  /* زرار التواصل */
+  .footer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* السوشيال */
+  .footer-social {
+    justify-content: center;
+  }
 }

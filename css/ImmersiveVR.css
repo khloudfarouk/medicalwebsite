@@ -107,56 +107,57 @@
 
 /* زرار التواصل */
 .contact-btn {
-    border-radius: 50px;
-    padding: 8px 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: none;
-    background: var(--main-color);
-    /* بنفسجي */
-    color: #fff;
-text-decoration: none;
-    transition: 0.3s;
-    margin-top: 15px;
-    /* في الموبايل */
-}
-
-.contact-btn:hover {
-    background: var(--main-color);
-    /* بنفسجي أغمق عند الهوفر */
+  border-radius: 50px;
+  padding: 10px 25px; /* ✨ padding مظبوط */
+  display: flex;
+  justify-content: center; /* ✨ يخلي النص والأيقونة في النص */
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: var(--main-color);
+  color: #fff;
+  transition: 0.3s;
+  margin-top: 15px;
+  text-decoration: none;
 }
 
 .contact-btn i {
-    font-size: 14px;
-    transform: rotate(45deg);
-    /* يخليه لفوق + يمين */
+  font-size: 14px;
+  transform: rotate(45deg);
 }
-
 
 /* النص */
 .hero-content {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 15px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 15px;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 500;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  /* ✨ تصغير المساحة بين عناصر القائمة */
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* ✨ نصغر الكونتينر كمان */
+  .nav-container {
+    padding: 6px 15px;
+  }
 }
-
-
 
 
 
@@ -285,6 +286,42 @@ text-decoration: none;
 }
 
 
+/* 📱 تابلت + موبايل */
+@media (max-width: 991px) {
+  .heal-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* كاردين في الصف */
+    gap: 20px;
+    height: auto; /* نخلي الارتفاع مرن */
+  }
+
+  .heal-card {
+    flex: none;               /* نلغي الفليكس عشان الجريد */
+    width: 100%;
+    min-height: 280px;
+    position: relative;
+  }
+
+  .heal-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;                /* مخفية */
+    transition: opacity 0.6s ease;
+  }
+
+  .heal-card.expanded img {
+    opacity: 1;                /* تظهر لما يتعمل expand */
+  }
+
+  .heal-card-content {
+    text-align: center;
+    padding: 15px;
+    z-index: 2;
+  }
+}
 
 
 
@@ -318,7 +355,16 @@ text-decoration: none;
 }
 
 
+@media (max-width: 991px) {
+  .features-section .feature-item {
+    border: none !important; /* شيل كل البوردرز */
+  }
 
+  .features-section .feature-item h5 {
+    white-space: nowrap;
+    margin-left: 5px;
+  }
+}
 
 
 
@@ -397,91 +443,101 @@ text-decoration: none;
 }
 
 
+@media (max-width: 768px) {
+  .othercases .case-card {
+    flex: 0 0 50%; 
+    min-width: 50%;
+  }
+}
+
+
 
 
 .footer-section {
-    background: var(--main-color);
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
+  background: var(--main-color);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
 }
 
 .footer-tagline {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 600;
 }
 
 .footer-btn {
-    background: #fff;
-    color: var(--main-color);
-    border: none;
-    border-radius: 50px;
-    padding: 12px 90px;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 auto;
+  background: #fff;
+  color: var(--main-color);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 90px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
 }
 
 .footer-btn i {
-    font-size: 18px;
-    transform: rotate(45deg);
+  font-size: 18px;
+  transform: rotate(45deg);
+}
+.footer-btn a {
+  text-decoration: none;
+  color: var(--main-color);
 }
 
 .footer-btn:hover {
-    background: #f2f2f2;
+  background: #f2f2f2;
 }
 
 .footer-middle {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    /* المسافة بين الليستات */
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  /* المسافة بين الليستات */
 }
 
 .footer-middle-list {
-    padding: 0 1rem;
-    /* نلغي أي خطوط */
-    border-left: none;
+  padding: 0 1rem;
+  /* نلغي أي خطوط */
+  border-left: none;
 }
 
 
 .footer-middle-list:first-child {
-    border-left: none;
+  border-left: none;
 }
 
 .footer-list-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .footer-list {
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-list li {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .footer-list a {
-    text-decoration: none;
-    color: #FFF;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #FFF;
+  transition: color 0.3s;
 }
 
-.footer-list a:hover {
-    color: #000;
-}
+
 
 /* أيقونات السوشيال */
 .footer-social a {
@@ -491,36 +547,77 @@ text-decoration: none;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: #fff;
-    /* خلفية بيضاوية */
-    color: #000;
-    /* افتراضي */
+    background: #fff; /* خلفية بيضاوية */
+    color: #000; /* افتراضي */
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 /* ألوان أيقونات حسب كل شبكة */
-.footer-social a.linkedin i {
-    color: #0077B5;
-}
-
-.footer-social a.x i {
-    color: #1DA1F2;
-}
-
-/* تويتر */
-.footer-social a.facebook i {
-    color: #1877F2;
-}
-
-.footer-social a.instagram i {
-    color: #E1306C;
-}
-
-.footer-social a.google i {
-    color: #DB4437;
-}
+.footer-social a.linkedin i { color: #0077B5; }
+.footer-social a.x i { color: #1DA1F2; } /* تويتر */
+.footer-social a.facebook i { color: #1877F2; }
+.footer-social a.instagram i { color: #E1306C; }
+.footer-social a.google i { color: #DB4437; }
 
 .footer-social a:hover {
     transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .footer-section .row.align-items-start {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    border: none !important; /* شيل البوردارات */
+    margin-bottom: 20px;
+  }
+
+  /* ترتيب القوائم الوسطى */
+  .footer-col:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* القائمتين الأوليين في صف واحد */
+  .footer-middle-list:nth-child(1),
+  .footer-middle-list:nth-child(2) {
+    width: 48%;
+    margin: 0 1%;
+    text-align: left; /* خلي النص منسق داخل القوائم */
+  }
+
+  /* القائمة الثالثة تأخذ صف كامل */
+  .footer-middle-list:nth-child(3) {
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  /* القوائم داخل Our Applications تبقى بدون تغيير */
+  .footer-middle-list:nth-child(3) .row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-middle-list:nth-child(3) .col-4,
+  .footer-middle-list:nth-child(3) .col-8 {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+
+  /* زرار التواصل */
+  .footer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* السوشيال */
+  .footer-social {
+    justify-content: center;
+  }
 }

@@ -100,31 +100,23 @@
 /* زرار التواصل */
 .contact-btn {
   border-radius: 50px;
-  padding: 8px 20px;
+  padding: 10px 25px; /* ✨ padding مظبوط */
   display: flex;
+  justify-content: center; /* ✨ يخلي النص والأيقونة في النص */
   align-items: center;
   gap: 8px;
   border: none;
   background: var(--main-color);
-  /* بنفسجي */
   color: #fff;
-text-decoration: none;
   transition: 0.3s;
   margin-top: 15px;
-  /* في الموبايل */
-}
-
-.contact-btn:hover {
-  background: var(--main-color);
-  /* بنفسجي أغمق عند الهوفر */
+  text-decoration: none;
 }
 
 .contact-btn i {
   font-size: 14px;
   transform: rotate(45deg);
-  /* يخليه لفوق + يمين */
 }
-
 
 /* النص */
 .hero-content {
@@ -137,7 +129,7 @@ text-decoration: none;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 500;
 }
 
@@ -146,8 +138,18 @@ text-decoration: none;
   .hero-content h1 {
     font-size: 1.8rem;
   }
-}
 
+  /* ✨ تصغير المساحة بين عناصر القائمة */
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* ✨ نصغر الكونتينر كمان */
+  .nav-container {
+    padding: 6px 15px;
+  }
+}
 
 
 
@@ -188,6 +190,21 @@ font-family: 'poppins', sans-serif;
   height: 550px;
   border-radius: 15px;
 
+}
+
+
+@media (max-width: 768px) {
+  .driven-title {
+    font-size: 1.4rem; /* يصغر عن 2rem */
+    line-height: 1.3;  /* يقلل المسافة بين السطور */
+    padding-left: 20px;
+  }
+
+  .word-with-image img {
+    width: 80px;   /* صغري الصورة اللي تحت الكلمة */
+    left: -25px;
+    bottom: -15px;
+  }
 }
 
 
@@ -494,6 +511,12 @@ font-family: 'poppins', sans-serif;
 
 
 
+@media (max-width: 768px) {
+  .othercases .case-card {
+    flex: 0 0 50%; 
+    min-width: 50%;
+  }
+}
 
 
 
@@ -566,6 +589,10 @@ font-family: 'poppins', sans-serif;
   font-size: 18px;
   transform: rotate(45deg);
 }
+.footer-btn a {
+  text-decoration: none;
+  color: var(--main-color);
+}
 
 .footer-btn:hover {
   background: #f2f2f2;
@@ -611,9 +638,7 @@ font-family: 'poppins', sans-serif;
   transition: color 0.3s;
 }
 
-.footer-list a:hover {
-  color: #000;
-}
+
 
 /* أيقونات السوشيال */
 .footer-social a {
@@ -627,6 +652,7 @@ font-family: 'poppins', sans-serif;
     color: #000; /* افتراضي */
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 /* ألوان أيقونات حسب كل شبكة */
@@ -638,4 +664,61 @@ font-family: 'poppins', sans-serif;
 
 .footer-social a:hover {
     transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .footer-section .row.align-items-start {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    border: none !important; /* شيل البوردارات */
+    margin-bottom: 20px;
+  }
+
+  /* ترتيب القوائم الوسطى */
+  .footer-col:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* القائمتين الأوليين في صف واحد */
+  .footer-middle-list:nth-child(1),
+  .footer-middle-list:nth-child(2) {
+    width: 48%;
+    margin: 0 1%;
+    text-align: left; /* خلي النص منسق داخل القوائم */
+  }
+
+  /* القائمة الثالثة تأخذ صف كامل */
+  .footer-middle-list:nth-child(3) {
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  /* القوائم داخل Our Applications تبقى بدون تغيير */
+  .footer-middle-list:nth-child(3) .row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-middle-list:nth-child(3) .col-4,
+  .footer-middle-list:nth-child(3) .col-8 {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+
+  /* زرار التواصل */
+  .footer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* السوشيال */
+  .footer-social {
+    justify-content: center;
+  }
 }
