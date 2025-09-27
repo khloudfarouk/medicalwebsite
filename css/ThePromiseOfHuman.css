@@ -371,107 +371,84 @@
 
 
 .heal-container {
-    display: flex;
-    gap: 20px;
-    height: 400px;
+  display: flex;
+  gap: 20px;
+  height: 400px;
 }
 
 .heal-card {
-    position: relative;
-    flex: 1;
-    min-height: 100%;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    background:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(180deg, #003366, #3399ff) border-box;
-    overflow: hidden;
-    cursor: pointer;
-    transition: flex 1.5s ease, transform 1.5s ease;
-    /* ابطأ */
-    
-    justify-content: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    
+  position: relative;
+  flex: 1;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(180deg, #003366, #3399ff) border-box;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: flex 1.5s ease, transform 1.5s ease;
 }
 
-.heal-card.expanded {
-    flex: 3;
+/* عند المرور بالماوس */
+.heal-card:hover {
+  flex: 3;
 }
 
-
-/* النص الأساسي */
 .heal-card-content {
-    text-align: start;
-    padding: 20px;
-    position: relative;
-    z-index: 2;
-    transition: opacity 1s ease;
+  text-align: start;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  transition: opacity 1s ease;
 }
 
-.heal-card.expanded .heal-card-content {
-    opacity: 0;
+/* إخفاء النص الأساسي عند الهوفر */
+.heal-card:hover .heal-card-content {
+  opacity: 0;
 }
 
-/* النص اللي بيظهر بعد التوسيع */
 .heal-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 30px;
-    color: var(--main-color);
-    font-size: 1.2rem;
-    font-weight: 500;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-    /* ابطأ */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  color: var(--main-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
-.heal-card.expanded .heal-overlay {
-    opacity: 1;
+/* إظهار الشرح عند الهوفر */
+.heal-card:hover .heal-overlay {
+  opacity: 1;
 }
 
 .heal-overlay h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
+/* موبايل */
 @media (max-width: 768px) {
-  /* العنوان يفضل سطر واحد */
-  .our-vision .vision-title {
-    white-space: nowrap;
-    font-size: 1.7rem; 
-  }
-
-  
   .heal-container {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 20px;
-    height: auto; 
+    height: auto;
   }
-
   .heal-card {
-    flex: 0 0 100%; /* كل كارد ياخد الصف كله */
-    min-height: 300px; /* ارتفاع مناسب للموبايل */
+    flex: 0 0 100%;
+    min-height: 300px;
   }
-  .heal-card-content h2 .heal-card-content p
-  {
-    font-size: 40px!important;
-  }
+}
 
-  .heal-overlay h2 {
-    font-size: 1.3rem;
-    
-}
-}
 
 
 
