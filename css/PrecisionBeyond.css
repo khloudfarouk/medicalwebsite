@@ -352,10 +352,16 @@
 .othercases .cards-wrapper {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  overflow: hidden;
-  padding: 20px 0;
+  animation: slide-left 15s linear infinite;
+  will-change: transform;
 }
+
+@keyframes slide-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* يتحرك بمقدار نصف العرض */
+}
+
+
 
 .othercases .case-card {
   flex: 0 0 25%; /* هنا السر */

@@ -190,18 +190,25 @@
   position: absolute;
   left: -40px;
   bottom: -20px;
+  /* مكان الصورة تحت الكلمة */
   width: 90px;
+  /* صغري/كبري حسب التصميم */
   height: auto;
 }
 
 .driven-text {
+
   color: var(--main-color);
 }
 
 .second-image {
-  width: 550px !important;
-  height: 450px;
+  width: 560px !important;
+  height: 350px;
+
 }
+
+
+
 
 /* ✨ للموبايل */
 @media (max-width: 992px) {
@@ -245,6 +252,10 @@
 
 .publication-data {
   color: var(--main-color);
+}
+.publication-data h3
+{
+  font-size: 1.4rem;
 }
 
 /* ====== الأعمدة الأساسية ====== */
